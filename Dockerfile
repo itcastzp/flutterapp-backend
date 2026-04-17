@@ -1,0 +1,13 @@
+FROM m.daocloud.io/docker.io/node:20-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --omit=dev
+
+COPY src ./src
+
+ENV NODE_ENV=production
+EXPOSE 3000
+
+CMD ["npm", "start"]
