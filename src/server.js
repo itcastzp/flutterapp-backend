@@ -13,7 +13,7 @@ const allowedMimeTypes = new Set([
   "video/mp4",
   "video/quicktime"
 ]);
-const maxFileSizeBytes = Number(process.env.MAX_FILE_SIZE_BYTES || 10 * 1024 * 1024);
+const maxFileSizeBytes = Number(process.env.MAX_FILE_SIZE_BYTES || 1000 * 1024 * 1024);
 const uploadUrlExpireSeconds = Number(process.env.UPLOAD_URL_EXPIRE_SECONDS || 600);
 const bucketName = process.env.MINIO_BUCKET || "mobile-images";
 const multipartThresholdBytes = Number(process.env.MULTIPART_THRESHOLD_BYTES || 20 * 1024 * 1024);
